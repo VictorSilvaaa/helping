@@ -1,29 +1,33 @@
-import {Entity, PrimaryGeneratedColumn, Column} from 'typeorm';
+import {Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import {Bloods} from './Bloods';
 
 @Entity()
 export class Donator {
   @PrimaryGeneratedColumn()
-  id:number;
+  id: number;
 
   @Column()
-  name:string;
+  name: string;
 
   @Column()
-  sex:string;
+  sex: string;
 
   @Column()
-  phone_number:string;
+  phone_number: string;
 
   @Column()
-  description:string;
+  description: string;
 
   @Column()
-  blood_type:string;
+  blood_code: number;
 
   @Column()
   latitude: number;
 
   @Column()
-  longitude:number;
+  longitude: number;
+
+  @ManyToOne(() => Bloods, blood => blood.id)
+  blood: Bloods;
 
 }

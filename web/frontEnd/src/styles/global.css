@@ -4,11 +4,59 @@
     box-sizing: border-box;
 }
 
+html, body, #root {
+    height: 100%;
+    width: 100%;
+    
+  }
+
 body {
-    color: #fff;
-    background: #ebf2f5;
+    margin: 0;
+    
+    
 }
 
 body, input, button, textarea {
     font: 700 18px Nunito, sans-serif;
 }
+.container {
+    width: 90%;
+    max-width: 700px;
+  }
+
+  
+@media (min-width: 700px) {
+    :root {
+      font-size: 62.5%;
+    }
+  }
+
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+body,
+input,
+button,
+textarea {
+  font: 500 1.6rem Poppins;
+  color: var(--color-text-base);
+}
+
+:root {
+    font-size: 60%;
+
+    --color-primary: linear-gradient(180deg, rgba(221, 22, 22, 0.82) 0%, rgba(232, 6, 6, 0.6478) 100%);
+   
+    --color-text-in-primary: #ffffff;
+
+    --color-secundary: #22BCE0;
+    --color-secundary-dark: #22bde0bb;
+    
+    --color-primary-lighter: #592424e0;
+    --color-primary-light:#50202095;
+    
+
+  
+  }

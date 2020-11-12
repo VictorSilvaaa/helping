@@ -12,9 +12,7 @@ function Routes(){
     return(
         <BrowserRouter>
            <Switch>
-           <Route path="/" exact component={ Landing } /> 
-           <Route path="/cards" component={ Home2 } /> 
-
+           <Route path="/" exact component={ Landing } />  
            </Switch>
                
                

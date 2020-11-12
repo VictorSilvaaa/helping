@@ -84,16 +84,11 @@
   .buttons-container a img {
     margin-right: 2.4rem;
   }
-  
-  .location {
-    font-size: 1.4rem;
-  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 0.8rem;
-  }
 
+ 
+  
+  
+ 
 
   @media (min-width: 100px) and (max-width: 500px){
   .logo-container img {
@@ -156,8 +151,5 @@
       font-size: 2.4rem;
     }
   
-    .total-connections {
-      grid-area: total;
-      justify-self: end;
-    }
+    
   }

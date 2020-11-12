@@ -7,11 +7,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-  
-    
-
 }
+
 /* Tablet em retrato a paisagem e desktop */
 @media (max-width: 599px) {
 

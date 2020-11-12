@@ -2,21 +2,18 @@
     
     position: relative;  
     width: 80%;
-    display: inline-grid;
-    
-    
-    
-    
-    
+    display: flex;
+    flex-direction: row;
+    grid-gap: 5px; 
     padding: 5vh 5vw 5vh;
+    
    
  
 }
+
+
 .cards article{
     border-radius: 25px;
-    
-  
-    
     
     
  
@@ -74,6 +71,20 @@ color: #374A59;
     padding: 10px;
     display: flex;
     justify-content:center;
-    display: grid;
-    grid-column-gap: 50px;
+    
+    
 }
+
+
+
+@media (max-width: 800px) {
+
+    #page-home2 .cards { 
+      flex-direction: column;
+      
+
+    }
+    .cards article{
+        max-width: 250px;
+    }
+  }

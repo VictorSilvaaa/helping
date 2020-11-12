@@ -7,8 +7,11 @@ import homeimg from '../images/landingHelping.svg';
 
 function landing() {
     return (
+      
       <div id="page-landing">
+
         <div className="content-wrapper"> 
+        
           <img src= { logoImg } alt="logoHelping"></img>
           
           
@@ -20,10 +23,13 @@ function landing() {
             <span>Maranhão</span>
           </div>
 
-       
-            <Link to="/app" className="enter-app"> 
-            cadastre-se
-            </Link>
+          
+             <Link to="/app" className="enter-app"> 
+                 cadastre-se
+              </Link>
+
+            
+           
             
 
             

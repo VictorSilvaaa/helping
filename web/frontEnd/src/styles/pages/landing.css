@@ -12,6 +12,9 @@
     
 
 }
+
+
+
 /* Tablet em retrato a paisagem e desktop */
 @media (max-width: 599px) {
 
@@ -144,7 +147,7 @@
 }
 
 #page-landing .content-wrapper img{
-    width: 20vw;
+    width: calc(150px + (120/2000) * 100 * 1vw);;
     max-width: 300px;
 }
 
@@ -155,7 +158,7 @@
     right: 0;
     top: 0;
 
-    font-size: 14px;
+    font-size: calc(20px + (2/2000) * 100 * 1vw);
     line-height: 34px;
     display: flex;
     flex-direction: column;
@@ -172,6 +175,8 @@
     color: #ffffff;
     bottom: 0;
     background:rgba(250, 54, 54, 0.911);
+
+    font-size: calc(22px + (2/2000) * 100 * 1vw);;
 
     width: 22%;
     height: 12%;

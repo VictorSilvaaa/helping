@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import Landing from './pages/Landing'
+import Home2 from './pages/home2'
+
 
 
 // exact -> o caminho precisa ser igual.
@@ -9,9 +11,14 @@ import Landing from './pages/Landing'
 function Routes(){
     return(
         <BrowserRouter>
-            <Switch>
-                <Route path="/" component={ Landing } />   
-            </Switch>
+           <Switch>
+           <Route path="/" exact component={ Landing } /> 
+           <Route path="/cards" component={ Home2 } /> 
+
+           </Switch>
+               
+               
+           
         </BrowserRouter>
     );
 }

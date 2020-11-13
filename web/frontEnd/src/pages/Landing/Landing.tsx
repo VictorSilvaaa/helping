@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import '../../assets/styles/global.css';
 import './landing.css';
 import '../../styles/global.css';
 

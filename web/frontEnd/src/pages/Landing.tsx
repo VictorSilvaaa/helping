@@ -5,6 +5,7 @@ import '../styles/global.css';
 import '../styles/pages/landing.css';
 
 import iconBlood from '../images/icons/blood-home.svg';
+import cadastro from '../images/icons/cadastro.svg';
 
 import logoImg from '../images/logoHelping.svg';
 import homeimg from '../images/landingHelping.svg';
@@ -29,6 +30,7 @@ function Landing() {
 
         <div className="buttons-container">
           <Link to="/cadastro" className="cadastre-se">
+          <img src={cadastro} alt="Doadores"/>
             Cadastre-se
           </Link>
 

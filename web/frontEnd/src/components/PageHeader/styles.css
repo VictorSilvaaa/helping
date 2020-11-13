@@ -1,7 +1,7 @@
 .page-header {
   display: flex;
   flex-direction: column;
-  background-color: var(--color-primary);
+  background:linear-gradient(180deg, rgba(221, 22, 22, 0.82) 0%, rgba(232, 6, 6, 0.6478) 100%) ;
 }
 .page-header .top-bar-container {
   width: 90%;
@@ -9,8 +9,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--color-text-in-primary);
+  color: black;
   padding: 1.6rem 0;
+  
 }
 .page-header .top-bar-container a {
   height: 3.2rem;
@@ -30,13 +31,13 @@
 .page-header .header-content strong {
   font: 700 3.6rem Archivo;
   line-height: 4.2rem;
-  color: var(--color-title-in-primary);
+  color:#e0daedf1   ;
 }
 .page-header .header-content p {
   max-width: 30rem;
   font-size: 1.6rem;
   line-height: 2.6rem;
-  color: var(--color-text-in-primary);
+  color: #592424;
   margin-top: 2.4rem;
 }
 

@@ -1,19 +1,26 @@
+body{
+  background: #d0d0df 100vh 100vw;
+}
 #page-teacher-form {
   width: 100vw;
   height: 100vh;
+  
 }
 #page-teacher-form .page-header .header-content {
   margin-bottom: 6.4rem;
 }
 
 #page-teacher-form main {
-  background: var(--color-box-base);
+  background: #ffffff;
   width: 100%;
   max-width: 74rem;
   border-radius: 0.8rem;
   margin: -3.2rem auto 3.2rem;
   padding-top: 6.4rem;
   overflow: hidden;
+  border: 0.2vw solid #d0d0df;
+
+  
 }
 #page-teacher-form main fieldset {
   border: 0;
@@ -24,29 +31,18 @@
 }
 #page-teacher-form main fieldset legend {
   font: 700 2.4rem Archivo;
-  color: var(--color-text-title);
+  color: black;
   margin-bottom: 2.4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   padding-bottom: 1.6rem;
-  border-bottom: 1px solid var(--color-line-in-white);
-}
-#page-teacher-form main fieldset legend button {
-  background: none;
-  border: 0;
-  color: var(--color-primary);
-  font: 700 1.6rem Archivo;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-#page-teacher-form main fieldset legend button:hover {
-  color: var(--color-primary-dark);
+  border-bottom: 1px solid #d0d0df;
 }
 
 #page-teacher-form main .input-block label {
-  color: var(--color-text-complement);
+  color:black ;
 }
 #page-teacher-form main fieldset .input-block + .textarea-block {
   margin-top: 2.4rem;
@@ -57,7 +53,7 @@
 
 #page-teacher-form main footer {
   padding: 4rem 2.4rem;
-  background: var(--color-box-footer);
+  background:#fafafc ;
   border-top: 1px solid var(--color-line-in-white);
   margin-top: 6.4rem;
 }
@@ -67,7 +63,7 @@
   justify-content: center;
   font-size: 1.4rem;
   line-height: 2, 4rem;
-  color: var(--color-text-complement);
+  color: #9c98a6;
 }
 #page-teacher-form main footer p img {
   margin-right: 2rem;
@@ -75,8 +71,8 @@
 #page-teacher-form main footer button {
   width: 100%;
   height: 5.6rem;
-  background: var(--color-secundary);
-  color: var(--color-button-text);
+  background:#22BCE0 ;
+  color: black;
   border: 0;
   border-radius: 0.8rem;
   cursor: pointer;
@@ -87,8 +83,10 @@
   transition: background-color 0.2s;
   margin-top: 3.2rem;
 }
+
+
 #page-teacher-form main footer button:hover {
-  background: var(--color-secundary-dark);
+  background: #22bde0bb;
 }
 
 @media (min-width: 700px) {

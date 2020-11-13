@@ -24,7 +24,6 @@ export default function createrDonator() {
               options={[
                 { value: "Masculino", label: "Masculino"},
                 { value: "Feminino", label:  "Feminino"},
-                { value: "Manoel gay", label:  "manoel gay"},
               ]}
            />
           <Input name="phone_number" label="Whatsapp" />

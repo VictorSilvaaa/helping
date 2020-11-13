@@ -61,7 +61,7 @@ export default {
     const donatorRepository = getRepository(Donator);
 
     const donators = await donatorRepository.find({
-      select: ['name', 'sex', 'phone_number', 'description', 'latitude', 'longitude'],
+      select: ['id','name', 'sex', 'phone_number', 'description', 'latitude', 'longitude'],
       relations: ['blood']
     }) 
 
@@ -77,5 +77,16 @@ export default {
     */
 
     return response.json(donatorView.renderMany(donators));
+  }, 
+
+  async show(request: Request, response: Response){
+
+    const { id } = request.params;
+
+    const donatorRepository = getRepository(Donator);
+
+    const donator = await donatorRepository.findOneOrFail(id, { relations: ['blood'] });
+
+    return response.json(donatorView.render(donator));
   }
 }

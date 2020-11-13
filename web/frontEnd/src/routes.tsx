@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import Landing from './pages/Landing/Landing';
-import createDonator from './pages/DonatorForm/index';
+import createDonator from './pages/TeacherForm/index';
 
 
 // exact -> o caminho precisa ser igual.

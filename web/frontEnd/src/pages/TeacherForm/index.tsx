@@ -1,16 +1,16 @@
 import React from "react";
 
 import "./styles.css";
-import PageHeader from "../../components/PageHeader";
-import Input from "../../components/Input";
-import Textarea from "../../components/Textarea";
-import Select from "../../components/Select";
+import PageHeader from "../../components/PageHeader/";
+import Input from "../../components/Input/";
+import Textarea from "../../components/Textarea/";
+import Select from "../../components/Select/";
 
 import warningIcon from "../../assets/images/icons/warning.svg";
 
 export default function createDonator() {
   return (
-    <div className="container" id="page-donator-form">
+    <div className="container" id="page-teacher-form">
       <PageHeader
         title="Que incrível que você que ajudar"
         description="O primeiro passo é preencher esse formulario de inscrição."
@@ -20,14 +20,6 @@ export default function createDonator() {
         <fieldset>
           <legend>Seus Dados</legend>
           <Input name="name" label="Nome Completo" />
-          <Select
-            name="Blood-code"
-            label="Tipo sanguíneo"
-            options={[
-              { value: "A+", label: "A+" },
-              { value: "A-", label: "A-" },
-            ]}
-          />
           <Input name="whatsapp"  label="Whatsapp" />
           <Textarea name="description" label="Descrição" />
         </fieldset>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import '../../assets/styles/global.css';
 import './landing.css';
+import '../../styles/global.css';
 
 import iconBlood from '../../images/icons/blood-home.svg';
 import cadastro from '../../images/icons/cadastro.svg';

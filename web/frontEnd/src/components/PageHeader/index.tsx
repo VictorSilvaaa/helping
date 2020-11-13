@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import logoImage from "../../images/logoHelping.svg";
-import backIcon from "../../assets/images/icons/back.svg";
+import logoImage from "../../assets/images/logo.svg";
+import backIcon from "../../assets/images/icons/Voltar.svg";
+
 import "./styles.css";
-import warningIcon from "../../assets/images/icons/warning.svg";
 
 interface PageHeaderProps {
   title: string;

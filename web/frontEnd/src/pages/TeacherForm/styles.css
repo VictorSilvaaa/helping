@@ -1,26 +1,19 @@
-body{
-  background: #d0d0df 100vh 100vw;
-}
 #page-teacher-form {
   width: 100vw;
   height: 100vh;
-  
 }
 #page-teacher-form .page-header .header-content {
   margin-bottom: 6.4rem;
 }
 
 #page-teacher-form main {
-  background: #ffffff;
+  background: var(--color-box-base);
   width: 100%;
   max-width: 74rem;
   border-radius: 0.8rem;
   margin: -3.2rem auto 3.2rem;
   padding-top: 6.4rem;
   overflow: hidden;
-  border: 0.2vw solid #d0d0df;
-
-  
 }
 #page-teacher-form main fieldset {
   border: 0;
@@ -31,18 +24,29 @@ body{
 }
 #page-teacher-form main fieldset legend {
   font: 700 2.4rem Archivo;
-  color: black;
+  color: var(--color-text-title);
   margin-bottom: 2.4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   padding-bottom: 1.6rem;
-  border-bottom: 1px solid #d0d0df;
+  border-bottom: 1px solid var(--color-line-in-white);
+}
+#page-teacher-form main fieldset legend button {
+  background: none;
+  border: 0;
+  color: var(--color-primary);
+  font: 700 1.6rem Archivo;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+#page-teacher-form main fieldset legend button:hover {
+  color: var(--color-primary-dark);
 }
 
 #page-teacher-form main .input-block label {
-  color:black ;
+  color: var(--color-text-complement);
 }
 #page-teacher-form main fieldset .input-block + .textarea-block {
   margin-top: 2.4rem;
@@ -53,7 +57,7 @@ body{
 
 #page-teacher-form main footer {
   padding: 4rem 2.4rem;
-  background:#fafafc ;
+  background: var(--color-box-footer);
   border-top: 1px solid var(--color-line-in-white);
   margin-top: 6.4rem;
 }
@@ -63,7 +67,7 @@ body{
   justify-content: center;
   font-size: 1.4rem;
   line-height: 2, 4rem;
-  color: #9c98a6;
+  color: var(--color-text-complement);
 }
 #page-teacher-form main footer p img {
   margin-right: 2rem;
@@ -71,8 +75,8 @@ body{
 #page-teacher-form main footer button {
   width: 100%;
   height: 5.6rem;
-  background:#22BCE0 ;
-  color: black;
+  background: var(--color-secundary);
+  color: var(--color-button-text);
   border: 0;
   border-radius: 0.8rem;
   cursor: pointer;
@@ -83,10 +87,8 @@ body{
   transition: background-color 0.2s;
   margin-top: 3.2rem;
 }
-
-
 #page-teacher-form main footer button:hover {
-  background: #22bde0bb;
+  background: var(--color-secundary-dark);
 }
 
 @media (min-width: 700px) {
@@ -122,4 +124,27 @@ body{
     width: 20rem;
     margin-top: 0;
   }
+}
+
+:root {
+  --color-background: #f0f0f7;
+  --color-primary-lighter: #9871f5;
+  --color-primary-light: #916bea;
+  --color-primary: #8257e5;
+  --color-primary-dark: #774dd6;
+  --color-primary-darker: #6842c2;
+  --color-secundary: #04d361;
+  --color-secundary-dark: #04bf58;
+  --color-title-in-primary: #ffffff;
+  --color-text-in-primary: #d4c2ff;
+  --color-text-title: #32264d;
+  --color-text-complement: #9c98a6;
+  --color-text-base: #6a6180;
+  --color-line-in-white: #e6e6f0;
+  --color-input-background: #f8f8fc;
+  --color-button-text: #ffffff;
+  --color-box-base: #ffffff;
+  --color-box-footer: #fafafc;
+
+  font-size: 60%;
 }

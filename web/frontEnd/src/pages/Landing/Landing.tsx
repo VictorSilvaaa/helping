@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import '../styles/global.css';
-import '../styles/pages/landing.css';
+import '../../assets/styles/global.css';
+import './landing.css';
 
-import iconBlood from '../images/icons/blood-home.svg';
-import cadastro from '../images/icons/cadastro.svg';
+import iconBlood from '../../images/icons/blood-home.svg';
+import cadastro from '../../images/icons/cadastro.svg';
 
-import logoImg from '../images/logoHelping.svg';
-import homeimg from '../images/landingHelping.svg';
+import logoImg from '../../images/logoHelping.svg';
+import homeimg from '../../images/landingHelping.svg';
 
 function Landing() {
  

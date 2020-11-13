@@ -9,8 +9,8 @@
     justify-content: center;
     align-items: center;
   
-    color: var(--color-text-in-primary);
-    background: var(--color-primary) 100vw 100vh;
+    color: var(--color-text-h2);
+    background: var(--background-primary) 100vw 100vh;
   }
   
   .logo-container img {
@@ -47,7 +47,7 @@
     justify-content: center;
   
     text-decoration: none;
-    color: var(--color-button-text);
+    color: var(--color-text-button);
   
     transition: background-color 0.2s;
   }
@@ -59,16 +59,16 @@
   }
   
   .buttons-container a.cadastre-se {
-    background: var(--color-primary-lighter);
+    background: var(  --button-marrom);
   }  
   .buttons-container a.doadores {
-    background: var(--color-secundary);
+    background: var( --button-marrom);
   }  
   .buttons-container a.cadastre-se:hover {
-    background: var(--color-primary-light);
+    background: var( --button-marrom-two);
   }
   .buttons-container a.doadores:hover {
-    background: var(--color-secundary-dark);
+    background: var(--button-marrom-two);
   }
   .buttons-container a img {
     margin-right: 2.4rem;
@@ -169,3 +169,4 @@
       padding: 5vh 0 0;
     }
   }
+

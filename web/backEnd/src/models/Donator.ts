@@ -1,8 +1,8 @@
-import {Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
-import {Bloods} from './Bloods';
+import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
+import Bloods from './Bloods';
 
 @Entity()
-export class Donator {
+export default class Donator {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -28,6 +28,6 @@ export class Donator {
   longitude: number;
 
   @ManyToOne(() => Bloods, blood => blood.id)
+  @JoinColumn({name: "blood_code", referencedColumnName: 'id'})
   blood: Bloods;
-
 }

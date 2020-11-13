@@ -54,6 +54,8 @@ export class Donator1605147469740 implements MigrationInterface {
                         columnNames: ['blood_code'],
                         referencedTableName: 'bloods',
                         referencedColumnNames: ['id'],
+                        onUpdate: 'CASCADE',
+                        onDelete: 'CASCADE'
                     }
                 ]
             }

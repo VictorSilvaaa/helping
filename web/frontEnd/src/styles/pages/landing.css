@@ -79,21 +79,32 @@
   
  
 
-  @media (min-width: 100px) and (max-width: 600px){
+  @media (max-width: 999px){
     .logo-container img {
       width: 22rem;
     }
     .logo-container {
         margin-top: 10%;
+        max-height: 40vh;
+        
+    }
+    .logo-container h2{
+      font-size: 3rem;
     }
     .buttons-container a {
       width: 22rem;
       height: 8rem;
     }
+    .buttons-container{
+     max-height: 25vh;
+    }
+    .hero-image {
+      max-height: 35vh;
+    }
  
 }
 
-  @media (min-width: 1100px) {
+  @media (min-width: 1000px) {
     #page-landing-content {
       max-width: 1100px;
   

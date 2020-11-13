@@ -138,3 +138,23 @@
   
     
   }
+
+  @media (min-height:1000px){
+
+    .logo-container {
+     padding: 0 0 10vh;
+    }
+    .logo-container h2 {
+      font-size: 4rem;
+     }
+     .logo-container img{
+      padding: 0 0 5vh;  
+     }
+    .buttons-container a {
+      width:45vw;
+      font-size: 4rem;
+    }
+    .buttons-container{
+      padding: 5vh 0 0;
+    }
+  }

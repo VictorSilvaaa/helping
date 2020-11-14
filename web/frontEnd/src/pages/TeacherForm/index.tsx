@@ -1,14 +1,48 @@
-import React from "react";
+import React, { ReactElement, useState, FormEvent } from 'react';
+import { useHistory } from 'react-router-dom';
 
-import "./styles.css";
 import PageHeader from "../../components/PageHeader/";
 import Input from "../../components/Input/";
 import Textarea from "../../components/Textarea/";
 import Select from "../../components/Select/";
 
+import "./styles.css";
 import warningIcon from "../../assets/images/icons/warning.svg";
 
-export default function createDonator() {
+import api from '../../services/api';
+
+
+function Createdonator(): ReactElement {
+  const history = useHistory();
+
+  const [name, setName] = useState('');
+  const [sex, setSex] = useState('');
+  const [whatsapp, setWhatsapp] = useState('');
+  const [description, setDescription] = useState('');
+  const [blood_code, setBlood_code] = useState('');
+  const [latitude, setLocation] = useState('');
+  const [longitude, setLongitude]  = useState('');
+
+  function handleCreateClass(e: FormEvent) {
+    e.preventDefault();
+
+    api.post('classes', {
+      name,
+      sex,
+      whatsapp: Number(whatsapp),
+      description,
+      blood_code,
+      latitude,
+      longitude,
+    }).then(() => {
+      alert('Cadastro realizado com sucesso!');
+
+      history.push('/');
+    }).catch(() => {
+      alert('Erro no cadastro.');
+    });
+  }
+
   return (
     <div className="container" id="page-teacher-form">
       <PageHeader
@@ -17,38 +51,75 @@ export default function createDonator() {
       />
 
       <main>
-        <fieldset>
-          <legend>Seus Dados</legend>
-          <Input name="name" label="Nome Completo" />
-          <Input name="whatsapp"  label="Whatsapp" />
-          <Textarea name="description" label="Descrição" />
-        </fieldset>
+        <form>
+          <fieldset>
+            <legend>Seus Dados</legend>
+            <Input 
+              name="name" 
+              label="Nome Completo" 
+              value={name}
+              onChange={(e) => { setName(e.target.value) }}
+            />
 
-        <fieldset>
-          <legend>Sobre</legend>
           <Select
-            name="Blood-code"
-            label="Tipo sanguíneo"
-            options={[
-              { value: "A+", label: "A+" },
-              { value: "A-", label: "A-" },
-              { value: "B+", label: "B+" },
-              { value: "B-", label: "B-" },
-              { value: "AB+", label: "AB+" },
-              { value: "AB-", label: "AB-" },
-            ]}
-          />
-        </fieldset>
+              name="sex"
+              label="Gênero"
+              value={sex}
+              onChange={(e) => { setSex(e.target.value) }}
+              options={[
+                { value: "Masculino", label: "Masculino" },
+                { value: "Feminino",  label: "Feminino" },       
+              ]}
+            />
 
-        <footer>
-          <p>
-            <img src={warningIcon} alt="Aviso Importante" />
-            Importante <br />
-            Preencha todos os dados
-          </p>
-          <button type="button">Salvar cadastro</button>
-        </footer>
+            <Input 
+              name="whatsapp"  
+              label="Whatsapp" 
+              value={whatsapp}
+              onChange={(e) => { setWhatsapp(e.target.value) }}
+            />
+
+            <Textarea 
+              name="description"
+              label="Descrição"
+              value={description}
+              onChange={(e) => { setDescription(e.target.value) }}
+            />
+
+          </fieldset>
+
+          <fieldset>
+            <legend>Sobre</legend>
+            <Select
+              name="Blood-code"
+              label="Tipo sanguíneo"
+              value={blood_code}
+              onChange={(e) => { setBlood_code(e.target.value) }}
+              options={[
+                { value: "A+", label: "A+" },
+                { value: "A-", label: "A-" },
+                { value: "B+", label: "B+" },
+                { value: "B-", label: "B-" },
+                { value: "AB+", label: "AB+" },
+                { value: "AB-", label: "AB-" },
+                
+              ]}
+            />
+          </fieldset>
+
+          <footer>
+            <p>
+              <img src={warningIcon} alt="Aviso Importante" />
+              Importante <br />
+              Preencha todos os dados
+            </p>
+            <button type="button">Salvar cadastro</button>
+          </footer>
+
+        </form>
+        
       </main>
     </div>
   );
 }
+export default Createdonator;

@@ -1,13 +1,14 @@
 import React, { ReactElement, useState, FormEvent } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import "./styles.css";
 import PageHeader from "../../components/PageHeader/";
 import Input from "../../components/Input/";
 import Textarea from "../../components/Textarea/";
 import Select from "../../components/Select/";
 
+import "./styles.css";
 import warningIcon from "../../assets/images/icons/warning.svg";
+
 import api from '../../services/api';
 
 
@@ -15,34 +16,24 @@ function createDonator(): ReactElement {
   const history = useHistory();
 
   const [name, setName] = useState('');
-  const [avatar, setAvatar] = useState('');
-  const [bio, setBio] = useState('');
+  const [sex, setSex] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
-
-  const [subject, setSubject] = useState('');
-  const [cost, setCost] = useState('');
-
-  const [scheduleItems, setScheduleItems] = useState([
-    { week_day: 0, from: '', to: '' },
-  ]);
-
-  function addNewScheduleItem() {
-    setScheduleItems([...scheduleItems,
-    { week_day: 0, from: '', to: '' },
-    ]);
-  }
+  const [description, setDescription] = useState('');
+  const [blood_code, setBlood_code] = useState('');
+  const [latitude, setLocation] = useState('');
+  const [longitude, setLongitude]  = useState('');
 
   function handleCreateClass(e: FormEvent) {
     e.preventDefault();
 
     api.post('classes', {
       name,
-      avatar,
-      whatsapp,
-      bio,
-      subject,
-      cost: Number(cost),
-      schedule: scheduleItems,
+      sex,
+      whatsapp: Number(whatsapp),
+      description,
+      blood_code,
+      latitude,
+      longitude,
     }).then(() => {
       alert('Cadastro realizado com sucesso!');
 
@@ -52,20 +43,6 @@ function createDonator(): ReactElement {
     });
   }
 
-  function setScheduleItemValue(position: number, field: string, value: string) {
-    const updateScheduleItems = scheduleItems.map((scheduleItem, index) => {
-      if (index === position) {
-        return { ...scheduleItem, [field]: value };
-      }
-
-      return scheduleItem;
-    });
-
-    setScheduleItems(updateScheduleItems);
-  }
-
-
- 
   return (
     <div className="container" id="page-teacher-form">
       <PageHeader
@@ -80,12 +57,35 @@ function createDonator(): ReactElement {
             <Input 
               name="name" 
               label="Nome Completo" 
+              value={name}
               onChange={(e) => { setName(e.target.value) }}
             />
-            <Input name="whatsapp"  label="Whatsapp" />
-            <Textarea name="description" label="Descrição"
-            onChange={(e) => { setName(e.target.value) }}
+
+          <Select
+              name="sex"
+              label="Gênero"
+              value={sex}
+              onChange={(e) => { setSex(e.target.value) }}
+              options={[
+                { value: "Masculino", label: "Masculino" },
+                { value: "Feminino",  label: "Feminino" },       
+              ]}
             />
+
+            <Input 
+              name="whatsapp"  
+              label="Whatsapp" 
+              value={whatsapp}
+              onChange={(e) => { setWhatsapp(e.target.value) }}
+            />
+
+            <Textarea 
+              name="description"
+              label="Descrição"
+              value={description}
+              onChange={(e) => { setDescription(e.target.value) }}
+            />
+
           </fieldset>
 
           <fieldset>
@@ -93,8 +93,8 @@ function createDonator(): ReactElement {
             <Select
               name="Blood-code"
               label="Tipo sanguíneo"
-              value={subject}
-              onChange={(e) => { setSubject(e.target.value) }}
+              value={blood_code}
+              onChange={(e) => { setBlood_code(e.target.value) }}
               options={[
                 { value: "A+", label: "A+" },
                 { value: "A-", label: "A-" },

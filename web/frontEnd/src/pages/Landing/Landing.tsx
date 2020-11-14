@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './landing.css';
-import './global.css';
+import '../../assets/styles/global.css';
 
 import iconBlood from '../../images/icons/blood-home.svg';
 import cadastro from '../../images/icons/cadastro.svg';
@@ -25,11 +25,11 @@ function Landing() {
            <div className="buttons-container">
               <Link to="/cadastro" className="cadastre-se">
                 <img src={cadastro} alt="Doadores"/>
-                Cadastre-se
+                <span> Cadastre-se</span> 
               </Link>
               <Link to="/doadores" className="doadores">
                 <img src={iconBlood} alt="Doadores"/>
-                Doadores
+                <span> Doadores</span> 
                </Link>
            </div>
           </div>

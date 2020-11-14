@@ -14,18 +14,18 @@
   --color-box-footer: #fafafc;
 
   /*landing*/
-    --background-primary: linear-gradient(180deg, rgba(221, 22, 22, 0.82) 0%, rgba(232, 6, 6, 0.6478) 100%);
+  --background-primary: linear-gradient(180deg, rgba(221, 22, 22, 0.82) 0%, rgba(232, 6, 6, 0.6478) 100%);
    
-    --color-text-h2: #ffffff;
+  --color-text-h2: #ffffff;
 
-    --button-green: #22BCE0;
-    --button-green-two: #22bde0bb;
-    
-    --button-marrom: #592424e0;
-    --button-marrom-two:#50202095;
+  --button-green: #22BCE0;
+  --button-green-hover: #22bde0bb;
+  
+  --button-red: #ed2d2de5;
+  --button-red-hover:#f03f3f;
   
 
-  font-size: 60%;
+  font-size: 80%;
 }
 
 * {
@@ -34,21 +34,8 @@
   box-sizing: border-box;
 }
 
-html,
-body,
-#root {
-  height: 100vh;
-}
 
-body {
-  background: var(--color-background);
-}
 
-#root {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 body,
 input,

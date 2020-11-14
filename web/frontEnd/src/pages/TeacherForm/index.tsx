@@ -12,7 +12,7 @@ import warningIcon from "../../assets/images/icons/warning.svg";
 import api from '../../services/api';
 
 
-function createDonator(): ReactElement {
+function Createdonator(): ReactElement {
   const history = useHistory();
 
   const [name, setName] = useState('');
@@ -122,4 +122,4 @@ function createDonator(): ReactElement {
     </div>
   );
 }
-export default createDonator;
+export default Createdonator;

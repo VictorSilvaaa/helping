@@ -1,9 +1,8 @@
-body{
-  background:linear-gradient(180deg, rgba(221, 22, 22, 0.82) 0%, rgba(232, 6, 6, 0.6478) 100%);;
-}
+
 #page-home {
   height: 100vh;
   background: url('../../assets/images/landingHelping.svg') no-repeat 800px bottom;
+  background-color: rgba(255, 0, 0, 0.767);
   display:flex;
   align-items: center;
   justify-content:center;

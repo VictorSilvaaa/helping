@@ -1,10 +1,10 @@
 import React, { ReactElement, useState, FormEvent } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import PageHeader from "../../components/PageHeader/";
-import Input from "../../components/Input/";
-import Textarea from "../../components/Textarea/";
-import Select from "../../components/Select/";
+import PageHeader from "../../components/PageHeader";
+import Input from "../../components/Input";
+import Textarea from "../../components/Textarea";
+import Select from "../../components/Select";
 
 import "./styles.css";
 import warningIcon from "../../assets/images/icons/warning.svg";
@@ -13,23 +13,24 @@ import api from '../../services/api';
 
 
 function Createdonator(): ReactElement {
+  
   const history = useHistory();
 
   const [name, setName] = useState('');
   const [sex, setSex] = useState('');
-  const [whatsapp, setWhatsapp] = useState('');
+  const [phone_number, setPhone_number] = useState('');
   const [description, setDescription] = useState('');
   const [blood_code, setBlood_code] = useState('');
-  const [latitude, setLocation] = useState('');
+  const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude]  = useState('');
 
-  function handleCreateClass(e: FormEvent) {
+  function handleCreateDonator(e: FormEvent) {
     e.preventDefault();
 
-    api.post('classes', {
+    api.post('/donator', {
       name,
       sex,
-      whatsapp: Number(whatsapp),
+      phone_number,
       description,
       blood_code,
       latitude,
@@ -51,7 +52,7 @@ function Createdonator(): ReactElement {
       />
 
       <main>
-        <form>
+        <form onSubmit={handleCreateDonator}>
           <fieldset>
             <legend>Seus Dados</legend>
             <Input 
@@ -73,10 +74,10 @@ function Createdonator(): ReactElement {
             />
 
             <Input 
-              name="whatsapp"  
+              name="phone_number"  
               label="Whatsapp" 
-              value={whatsapp}
-              onChange={(e) => { setWhatsapp(e.target.value) }}
+              value={phone_number}
+              onChange={(e) => { setPhone_number(e.target.value) }}
             />
 
             <Textarea 
@@ -96,16 +97,28 @@ function Createdonator(): ReactElement {
               value={blood_code}
               onChange={(e) => { setBlood_code(e.target.value) }}
               options={[
-                { value: "A+", label: "A+" },
-                { value: "A-", label: "A-" },
-                { value: "B+", label: "B+" },
-                { value: "B-", label: "B-" },
-                { value: "AB+", label: "AB+" },
-                { value: "AB-", label: "AB-" },
+                { value: "1", label: "A+" },
+                { value: "2", label: "A-" },
+                { value: "3", label: "B+" },
+                { value: "4", label: "B-" },
+                { value: "5", label: "AB+" },
+                { value: "6", label: "AB-" },
                 
               ]}
             />
           </fieldset>
+          <Input 
+              name="latitude"  
+              label="latitude" 
+              value={latitude}
+              onChange={(e) => { setLatitude(e.target.value) }}
+            />
+            <Input 
+              name="longitude"  
+              label="longitude" 
+              value={longitude}
+              onChange={(e) => { setLongitude(e.target.value) }}
+            />
 
           <footer>
             <p>
@@ -113,7 +126,7 @@ function Createdonator(): ReactElement {
               Importante <br />
               Preencha todos os dados
             </p>
-            <button type="button">Salvar cadastro</button>
+            <button type="submit">Salvar cadastro</button>
           </footer>
 
         </form>

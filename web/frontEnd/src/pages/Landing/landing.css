@@ -1,7 +1,7 @@
 
 #page-home {
   height: 100vh;
-  background: url('../../assets/images/landingHelping.svg') no-repeat 800px bottom, var(--background-primary) 100vw 100vh;
+  background:var(--background-primary) 100vw 100vh;
   display:flex;
   align-items: center;
   justify-content:center;
@@ -117,8 +117,13 @@
 #buttonDonators:hover{
   background: var(--button-green-hover);
 }
+@media (min-width: 1400px) {
+  #page-home{
+    background: url('../../assets/images/landingHelping.svg') no-repeat 800px bottom, var(--background-primary) 100vw 100vh;
+  }
 
-@media (max-width: 900px) {
+}
+@media (max-width: 1400px) {
   *{
     margin:0;
     padding: 0;
@@ -153,6 +158,7 @@
   }
   #page-home .content .buttons{
     width:75vw;
+    max-width: 650px;
     
   }
 

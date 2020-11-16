@@ -23,7 +23,7 @@ function Landing() {
         <h1>Faça uma doação e salve vidas. Uma gota pode fazer a diferença</h1>
   
       <div className="buttons">
-      <Link to="/createDoantor" id="buttonDonators">
+      <Link to="/createDonator" id="buttonDonators">
           <span>
             <FiLogIn />
           </span>

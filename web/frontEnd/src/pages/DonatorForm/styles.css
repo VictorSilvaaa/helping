@@ -1,6 +1,7 @@
 #page-teacher-form {
-  width: 100vw;
-  height: 100vh;
+  width:100vw;
+  height:100vh;
+  background: var(--color-line-in-white) no-repeat;
 }
 #page-teacher-form .page-header .header-content {
   margin-bottom: 6.4rem;
@@ -15,6 +16,7 @@
   padding-top: 6.4rem;
   overflow: hidden;
 }
+
 #page-teacher-form main fieldset {
   border: 0;
   padding: 0 2.4rem;
@@ -147,4 +149,32 @@
   --color-box-footer: #fafafc;
 
   font-size: 60%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+body,
+input,
+button,
+textarea {
+  font: 500 1.6rem Poppins;
+  color: var(--color-text-base);
+}
+
+.container {
+  width: 90vw;
+  max-width: 700px;
+}
+
+@media (min-width: 700px) {
+  :root {
+    font-size: 62.5%;
+  }
 }

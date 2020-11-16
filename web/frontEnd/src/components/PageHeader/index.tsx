@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import logoImage from "../../assets/images/logo.svg";
-import backIcon from "../../assets/images/icons/Voltar.svg";
+import logoImage from "../../assets/images/logoHelping.svg";
+import backIcon from "../../assets/images/icons/backHelping.svg";
 
 import "./styles.css";
 

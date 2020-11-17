@@ -37,7 +37,7 @@ function Landing() {
           <strong >Procurar um doador</strong>
         </Link>
       </div>
-        
+          
       </main>
     </div>
   </div>

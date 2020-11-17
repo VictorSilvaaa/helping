@@ -1,13 +1,22 @@
-#page-teacher-form {
+#map-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  width: 100%;
+
+}
+
+#page-form {
   width:100vw;
   height:100vh;
   background: var(--color-line-in-white) no-repeat;
 }
-#page-teacher-form .page-header .header-content {
+#page-form .page-header .header-content {
   margin-bottom: 6.4rem;
 }
 
-#page-teacher-form main {
+#page-form main {
   background: var(--color-box-base);
   width: 100%;
   max-width: 74rem;
@@ -15,16 +24,17 @@
   margin: -3.2rem auto 3.2rem;
   padding-top: 6.4rem;
   overflow: hidden;
+  
 }
 
-#page-teacher-form main fieldset {
+#page-form main fieldset {
   border: 0;
   padding: 0 2.4rem;
 }
-#page-teacher-form main fieldset + fieldset {
+#page-form main fieldset + fieldset {
   margin-top: 6.4rem;
 }
-#page-teacher-form main fieldset legend {
+#page-form main fieldset legend {
   font: 700 2.4rem Archivo;
   color: var(--color-text-title);
   margin-bottom: 2.4rem;
@@ -35,7 +45,7 @@
   padding-bottom: 1.6rem;
   border-bottom: 1px solid var(--color-line-in-white);
 }
-#page-teacher-form main fieldset legend button {
+#page-form main fieldset legend button {
   background: none;
   border: 0;
   color: var(--color-primary);
@@ -43,27 +53,27 @@
   cursor: pointer;
   transition: color 0.2s;
 }
-#page-teacher-form main fieldset legend button:hover {
+#page-form main fieldset legend button:hover {
   color: var(--color-primary-dark);
 }
 
-#page-teacher-form main .input-block label {
+#page-form main .input-block label {
   color: var(--color-text-complement);
 }
-#page-teacher-form main fieldset .input-block + .textarea-block {
+#page-form main fieldset .input-block + .textarea-block {
   margin-top: 2.4rem;
 }
-#page-teacher-form main fieldset .select-block + .input-block {
+#page-form main fieldset .select-block + .input-block {
   margin-top: 2.4rem;
 }
 
-#page-teacher-form main footer {
+#page-form main footer {
   padding: 4rem 2.4rem;
   background: var(--color-box-footer);
   border-top: 1px solid var(--color-line-in-white);
   margin-top: 6.4rem;
 }
-#page-teacher-form main footer p {
+#page-form main footer p {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,10 +81,10 @@
   line-height: 2, 4rem;
   color: var(--color-text-complement);
 }
-#page-teacher-form main footer p img {
+#page-form main footer p img {
   margin-right: 2rem;
 }
-#page-teacher-form main footer button {
+#page-form main footer button {
   width: 100%;
   height: 5.6rem;
   background: var(--color-secundary);
@@ -89,40 +99,40 @@
   transition: background-color 0.2s;
   margin-top: 3.2rem;
 }
-#page-teacher-form main footer button:hover {
+#page-form main footer button:hover {
   background: var(--color-secundary-dark);
 }
 
 @media (min-width: 700px) {
-  #page-teacher-form {
+  #page-form {
     max-width: 100vw;
   }
-  #page-teacher-form .page-header .header-content {
+  #page-form .page-header .header-content {
     margin-bottom: 0;
   }
-  #page-teacher-form main fieldset {
+  #page-form main fieldset {
     padding: 0 6.4rem;
   }
 
-  #page-teacher-form main .schedule-item {
+  #page-form main .schedule-item {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     column-gap: 1.6rem;
   }
-  #page-teacher-form main .schedule-item .input-block {
+  #page-form main .schedule-item .input-block {
     margin-top: 0 !important;
   }
 
-  #page-teacher-form main footer {
+  #page-form main footer {
     padding: 4rem 6.4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  #page-teacher-form main footer p {
+  #page-form main footer p {
     justify-content: space-between;
   }
-  #page-teacher-form main footer button {
+  #page-form main footer button {
     width: 20rem;
     margin-top: 0;
   }

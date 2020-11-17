@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
+import { BiDonateBlood } from 'react-icons/bi';
 
 import './landing.css';
 import '../../assets/styles/global.css';
@@ -25,13 +26,13 @@ function Landing() {
       <div className="buttons">
       <Link to="/createDonator" id="buttonDonators">
           <span>
-            <FiLogIn />
+            <FiLogIn id="doador" />
           </span>
           <strong>Seja um doador</strong>
         </Link>
         <Link to="/doadores" id="buttonDonator" >
           <span >
-            <img src={iconBlood} alt="iconBlood" />
+          <BiDonateBlood id="blood"/>
           </span>
           <strong >Procurar um doador</strong>
         </Link>

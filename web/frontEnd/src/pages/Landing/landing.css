@@ -79,8 +79,9 @@
 #page-home .content main a span {
   display: block;
   background: rgba(0, 0, 0, 0.08);
-  width: 72px;
-  height: 72px;
+  width: 23%;
+  min-width: 25px;
+  height: 100%;
 
   display: flex;
   align-items: center;
@@ -91,21 +92,27 @@
 }
 
 #page-home .content main a span svg {
-  color: black;
-  width: 20px;
-  height: 20px;
+  color: rgba(29, 27, 27, 0.897);
+}
+#blood{
+  width: 100%;
+  height: 43%;
+}
+#doador{
+  width:100%;
+  height: 35%;
 }
 
 #page-home .content main a strong {
   flex: 1;
   text-align: center;
-  color: rgba(29, 27, 27, 0.897);
+  color: #fff;
+  
 }
 
 #page-home .content .buttons{
   display:flex;
   justify-content: space-between;
-
   font-size: 2rem;
 
   

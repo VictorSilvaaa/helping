@@ -1,11 +1,8 @@
-import React, {ChangeEvent, ReactElement, useState, FormEvent } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import React, {ReactElement, useState, FormEvent } from 'react';
+import { useHistory} from 'react-router-dom';
 import api from '../../services/api';
-
-import axios from 'axios';
 //maps
-import { LeafletMouseEvent } from 'leaflet';
-import { MapContainer, Marker, TileLayer } from 'react-leaflet';
+import { MapContainer,TileLayer } from 'react-leaflet';
 //componentes
 import PageHeader from "../../components/PageHeader";
 import Input from "../../components/Input";
@@ -16,45 +13,60 @@ import "./styles.css";
 import warningIcon from "../../assets/images/icons/warning.svg";
 import {SiGooglemaps} from 'react-icons/si';
 
-//formulário para criar doador
-function Formdonator(): ReactElement {
 
+function Formdonator(): ReactElement {
+  //declaração dados
   const history = useHistory();
   const [name, setName] = useState('');
   const [sex, setSex] = useState('');
   const [phone_number, setPhone_number] = useState('');
   const [description, setDescription] = useState('');
   const [blood_code, setBlood_code] = useState('');
+  let latitude = 1;
+  let longitude = 1;
   
-  //enviar todos para banco de dados
-  function CreateDonator(e: FormEvent) {
-e.preventDefault();
-
-api.post('/donator', {
-  name,
-  sex,
-  phone_number,
-  description,
-  blood_code,
-}).then(() => {
-  alert('Cadastro realizado com sucesso!');
-
-  history.push('/');
-}).catch(() => {
-  alert('Erro no cadastro.');
-});
+  //geolocalização
+  function a() {
+    if (navigator.geolocation) {
+      navigator.geolocation.watchPosition(function(position) {
+        latitude= (position.coords.latitude);
+        longitude= (position.coords.longitude);
+      });
+    }
   }
- //location
- 
-  //page
+
+  //enviar dados quando submit
+  function CreateDonator(e: FormEvent) {
+  e.preventDefault();
+
+  api.post('/donator', {
+    name,
+    sex,
+    phone_number,
+    description,
+    blood_code,
+    latitude,
+    longitude,
+
+  }).then(() => {
+    alert('Cadastro realizado com sucesso!');
+
+    history.push('/');
+  }).catch(() => {
+    alert('Erro no cadastro.');
+  });
+    }
+
+
 return (
+  
 <div className="container" id="page-form">
   <PageHeader
   title="Que incrível que você que ajudar"
   description="O primeiro passo é preencher esse formulario de inscrição."
   />
   <main>
-    <form  onSubmit={CreateDonator}>
+    <form onSubmit={CreateDonator}>
       <fieldset>
           <legend>Seus Dados</legend>
           <Input 
@@ -77,7 +89,7 @@ return (
 
         <div id="map-container">
           <label>Endereço</label> 
-          <button type="button" >
+          <button type="button" onClick={a} >
             <span><SiGooglemaps/></span>
             <strong>Usar localização atual</strong>
           </button>
@@ -137,7 +149,7 @@ return (
           Importante <br />
           Preencha todos os dados
         </p>
-        <button type="submit">Salvar cadastro</button>
+        <button type="submit" >Salvar cadastro</button>
           </footer>
 
    </form>

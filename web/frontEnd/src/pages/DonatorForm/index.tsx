@@ -22,15 +22,16 @@ function Formdonator(): ReactElement {
   const [phone_number, setPhone_number] = useState('');
   const [description, setDescription] = useState('');
   const [blood_code, setBlood_code] = useState('');
-  let latitude = 1;
-  let longitude = 1;
+  const [latitude, setLatitude] = useState(1);
+  const [longitude, setLongitude] = useState(1);
+ 
   
   //geolocalização
   function a() {
     if (navigator.geolocation) {
       navigator.geolocation.watchPosition(function(position) {
-        latitude= (position.coords.latitude);
-        longitude= (position.coords.longitude);
+        setLatitude(position.coords.latitude);
+        setLongitude(position.coords.longitude);   
       });
     }
   }
@@ -46,8 +47,7 @@ function Formdonator(): ReactElement {
     description,
     blood_code,
     latitude,
-    longitude,
-
+    longitude  
   }).then(() => {
     alert('Cadastro realizado com sucesso!');
 

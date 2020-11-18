@@ -27,7 +27,7 @@ function Formdonator(): ReactElement {
  
   
   //geolocalização
-  function a() {
+  function geolocation() {
     if (navigator.geolocation) {
       navigator.geolocation.watchPosition(function(position) {
         setLatitude(position.coords.latitude);
@@ -57,7 +57,6 @@ function Formdonator(): ReactElement {
   });
     }
 
-
 return (
   
 <div className="container" id="page-form">
@@ -82,20 +81,15 @@ return (
             value={sex}
             onChange={(e) => { setSex(e.target.value) }}
             options={[
-          {value: "Masculino", label: "Masculino" },
-          {value: "Feminino",  label: "Feminino" },   
-            ]}
+            {value: "Masculino", label: "Masculino" },
+            {value: "Feminino",  label: "Feminino" },]}  
           />
 
         <div id="map-container">
-          <label>Endereço</label> 
-          <button type="button" onClick={a} >
-            <span><SiGooglemaps/></span>
-            <strong>Usar localização atual</strong>
-          </button>
+          <label>Localização</label> 
 
           <MapContainer
-              center={[-27.2092052,-49.6401092]}
+              center={[1,1]}
               style={{ width: '100%', height: 280 }}
               zoom={15}
               id="map-container"   
@@ -104,8 +98,11 @@ return (
               url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
             />   
           </MapContainer>
+          <button type="button" onClick={geolocation} >  
+            <span><SiGooglemaps/></span>   
+            <strong>Usar localização atual</strong>
+          </button>
         </div>
-
 
         <Input 
           name="phone_number"  
@@ -141,8 +138,6 @@ return (
         />
       </fieldset>
 
-      
-
       <footer>
         <p>
           <img src={warningIcon} alt="Aviso Importante" />
@@ -150,7 +145,7 @@ return (
           Preencha todos os dados
         </p>
         <button type="submit" >Salvar cadastro</button>
-          </footer>
+      </footer>
 
    </form>
  </main>

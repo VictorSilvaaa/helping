@@ -117,20 +117,28 @@
 
   
 }
-
 #buttonDonator:hover{
   background: var(--button-red-hover);
 }
 #buttonDonators:hover{
   background: var(--button-green-hover);
 }
-@media (min-width: 1400px) {
+
+@media (min-width: 1100px) {
   #page-home{
-    background: url('../../assets/images/landingHelping.svg') no-repeat 800px bottom, var(--background-primary) 100vw 100vh;
+    background: url('../../assets/images/landingHelping.svg') 
+    no-repeat
+    95%
+    bottom
+    , 
+    var(--background-primary) 
+    100vw
+    100vh;
   }
+ 
 
 }
-@media (max-width: 1400px) {
+@media (max-width: 1099px) {
   *{
     margin:0;
     padding: 0;

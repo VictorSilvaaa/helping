@@ -1,15 +1,10 @@
-#map-container{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
+#page-form .container{
   width: 100%;
-
+  height: 100%;
 }
-
 #page-form {
-  width:100vw;
-  height:100vh;
+  width:100%;
+  height:100%;
   background: var(--color-line-in-white) no-repeat;
 }
 #page-form .page-header .header-content {

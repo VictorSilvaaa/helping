@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
+import { BiDonateBlood } from 'react-icons/bi';
 
 import './landing.css';
 import '../../assets/styles/global.css';
@@ -23,20 +24,20 @@ function Landing() {
         <h1>Faça uma doação e salve vidas. Uma gota pode fazer a diferença</h1>
   
       <div className="buttons">
-      <Link to="/createDoantor" id="buttonDonators">
+      <Link to="/createDonator" id="buttonDonators">
           <span>
-            <FiLogIn />
+            <FiLogIn id="doador" />
           </span>
           <strong>Seja um doador</strong>
         </Link>
         <Link to="/doadores" id="buttonDonator" >
           <span >
-            <img src={iconBlood} alt="iconBlood" />
+          <BiDonateBlood id="blood"/>
           </span>
           <strong >Procurar um doador</strong>
         </Link>
       </div>
-        
+          
       </main>
     </div>
   </div>

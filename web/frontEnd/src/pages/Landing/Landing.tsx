@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiLogIn } from 'react-icons/fi';
+import { AiOutlineForm } from 'react-icons/ai';
 import { BiDonateBlood } from 'react-icons/bi';
 
 import './landing.css';
@@ -26,7 +26,7 @@ function Landing() {
       <div className="buttons">
       <Link to="/createDonator" id="buttonDonators">
           <span>
-            <FiLogIn id="doador" />
+            <AiOutlineForm id="doador" />
           </span>
           <strong>Seja um doador</strong>
         </Link>

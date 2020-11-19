@@ -87,12 +87,10 @@
   align-items: center;
   justify-content: center;
   transition: background-color 0.2s;
-
-  
 }
 
 #page-home .content main a span svg {
-  color: rgba(29, 27, 27, 0.897);
+  color: var(--color-link);
 }
 #blood{
   width: 100%;
@@ -107,6 +105,7 @@
   flex: 1;
   text-align: center;
   color: #fff;
+  padding: 8px;
   
 }
 

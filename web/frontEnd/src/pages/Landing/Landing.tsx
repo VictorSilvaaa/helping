@@ -6,12 +6,10 @@ import { BiDonateBlood } from 'react-icons/bi';
 import './landing.css';
 import '../../assets/styles/global.css';
 
-import iconBlood from '../../assets/images/icons/blood-home.svg';
 import logoImg from '../../assets/images/logoHelping.svg';
 
 function Landing() {
  
-
   return (
     
     <div id="page-home">

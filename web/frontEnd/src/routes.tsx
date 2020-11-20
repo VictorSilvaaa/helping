@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import Landing from './pages/Landing/Landing';
-import createDonator from './pages/DonatorForm/index';
+import DonatorForm from './pages/DonatorForm/DonatorForm';
 
 
 // exact -> o caminho precisa ser igual.
@@ -12,7 +12,7 @@ function Routes(){
         <BrowserRouter>
            <Switch>
            <Route path="/" exact component={ Landing } />  
-           <Route path="/createDonator"  component={ createDonator } />  
+           <Route path="/createDonator"  component={ DonatorForm } />  
            </Switch>          
         </BrowserRouter>
     );

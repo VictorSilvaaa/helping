@@ -1,20 +1,25 @@
 import React, {ReactElement, useState, FormEvent } from 'react';
-import { useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import api from '../../services/api';
 //maps
-import { MapContainer,TileLayer } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 //componentes
 import PageHeader from "../../components/PageHeader";
 import Input from "../../components/Input";
 import Textarea from "../../components/Textarea";
 import Select from "../../components/Select";
+import mapMarkerIcon from "../../utils/mapIcon";
+
 //style geral
-import "./styles.css";
+import 'leaflet/dist/leaflet.css';
+import "./donatorForm.css";
+import "../../assets/styles/global.css";
 import warningIcon from "../../assets/images/icons/warning.svg";
 import {SiGooglemaps} from 'react-icons/si';
 
 
-function Formdonator(): ReactElement {
+
+function DonatorForm(): ReactElement {
   //declaração dados
   const history = useHistory();
   const [name, setName] = useState('');
@@ -89,14 +94,32 @@ return (
           <label>Localização</label> 
 
           <MapContainer
-              center={[1,1]}
+              center={[-2.6350548,-44.2668795]}
               style={{ width: '100%', height: 280 }}
-              zoom={15}
+              zoom={9.5}
               id="map-container"   
             >
             <TileLayer
               url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
             />   
+
+            { 
+            
+            longitude !== 0? (
+
+              <Marker 
+
+              interactive={false} 
+              icon={mapMarkerIcon}
+              position={[
+                latitude, longitude
+              ]} />
+
+            ) : null
+
+            }
+
+
           </MapContainer>
           <button type="button" onClick={geolocation} >  
             <span><SiGooglemaps/></span>   
@@ -152,4 +175,4 @@ return (
 </div>
   );
 }
-export default Formdonator;
+export default DonatorForm;

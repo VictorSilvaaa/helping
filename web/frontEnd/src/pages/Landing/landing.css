@@ -1,10 +1,10 @@
-
 #page-home {
+  width: 100vw;
   height: 100vh;
-  background:var(--background-primary) 100vw 100vh;
+  background: var(--background-primary);
   display:flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   
 }
 #page-home .content {
@@ -22,7 +22,7 @@
 }
 
 #page-home .content header {
-  margin: 48px 0 0;
+  margin: 30px 0;
 }
 #page-home .content header img{
   min-height: 75px;
@@ -40,7 +40,9 @@
 #page-home .content main h1 {
   font-size: 50px;
   color: var( --color-text-h2);
-  margin-bottom:5vh;
+  margin-bottom: 50px;
+
+  padding: 0px 15px;
 
   font-family: 'Fredoka One';
   font-weight: 400;
@@ -105,14 +107,14 @@
   flex: 1;
   text-align: center;
   color: #fff;
-  padding: 8px;
+  padding: 10px;
   
 }
 
 #page-home .content .buttons{
   display:flex;
   justify-content: space-between;
-  font-size: 2rem;
+  font-size: 1.5rem;
 
   
 }
@@ -123,36 +125,21 @@
   background: var(--button-green-hover);
 }
 
-@media (min-width: 1100px) {
-  #page-home{
-    background: url('../../assets/images/landingHelping.svg') 
-    no-repeat
-    95%
-    bottom
-    , 
-    var(--background-primary) 
-    100vw
-    100vh;
+@media (max-width: 500px){
+  #page-home .content main a span{
+    display: none;
   }
- 
-
 }
-@media (max-width: 1099px) {
-  *{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
 
-  }
+@media (max-width: 1100px) {
   #page-home .content {
     align-items: center;
     text-align: center;
-
-    padding: 0 0px;
+    padding: 0px
   }
 
   #page-home .content header {
-    margin: 48px auto 0;
+    margin: 48px auto;
 
     display:flex;
     align-items: center;
@@ -164,7 +151,7 @@
   }
 
   #page-home .content main h1 {
-    font-size: 42px;
+    font-size: 3rem;
   }
 
   #page-home .content main p {
@@ -176,11 +163,19 @@
     
   }
 
-
 }
 
-@media (max-width: 500px){
-  #page-home .content main a span{
-    display: none;
+@media (min-width: 1100px) {
+  #page-home{
+    background: url('../../assets/images/landingHelping.svg') 
+    no-repeat
+    97%
+    bottom
+    , 
+    var(--background-primary) 
+    100vw
+    100vh;
   }
+
 }
+

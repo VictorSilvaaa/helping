@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   /* forms */
   --color-secundary: #04d361;
@@ -25,7 +31,12 @@
   --button-red: #ed2d2de5;
   --button-red-hover:#f03f3f;
   
-
   font-size: 80%;
+}
+
+@media (min-width: 700px) {
+  :root {
+    font-size: 80%;
+  }
 }
 

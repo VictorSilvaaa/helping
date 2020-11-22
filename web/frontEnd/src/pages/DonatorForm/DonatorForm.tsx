@@ -64,115 +64,113 @@ function DonatorForm(): ReactElement {
 
 return (
   
-<div className="container" id="page-form">
-  <PageHeader
-  title="Que incrível que você que ajudar"
-  description="O primeiro passo é preencher esse formulario de inscrição."
-  />
-  <main>
-    <form onSubmit={CreateDonator}>
-      <fieldset>
+<div id="page-form">
+  <div className="content">
+    <PageHeader
+    title="Que incrível que você que ajudar"
+    description="O primeiro passo é preencher esse formulario de inscrição."
+    />
+    <main>
+      <form onSubmit={CreateDonator}>
+        <fieldset>
           <legend>Seus Dados</legend>
-          <Input 
-            name="name" 
-            label="Nome Completo" 
-            value={name}
-            onChange={(e) => { setName(e.target.value) }}
+            <Input 
+              required
+              name="name" 
+              label="Nome Completo" 
+              value={name}
+              onChange={(e) => { setName(e.target.value) }}
+            />
+
+            <Select
+              required
+              name="sex"
+              label="Gênero"
+              value={sex}
+              onChange={(e) => { setSex(e.target.value) }}
+              options={[
+              {value: "Masculino", label: "Masculino" },
+              {value: "Feminino",  label: "Feminino" },]}  
+            />
+
+          <div className="map-block">
+            <label>Localização</label> 
+
+            <MapContainer
+                center={[-2.6350548,-44.2668795]}
+                style={{ width: '100%', height: 280 }}
+                zoom={10}
+                id="map-container"   
+              >
+              <TileLayer
+                url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
+              />   
+
+              { longitude !== 0? (
+                <Marker 
+                  interactive={false} 
+                  icon={mapMarkerIcon}
+                  position={[
+                    latitude, longitude
+                  ]} />
+              ) : null }
+
+            </MapContainer>
+            <button type="button" onClick={geolocation} >   
+              <strong>Usar localização atual</strong>
+            </button>
+          </div>
+
+          <Input
+            required 
+            name="phone_number"  
+            label="Whatsapp" 
+            value={phone_number}
+            onChange={(e) => { setPhone_number(e.target.value) }}
           />
 
+          <Textarea 
+            required
+            name="description"
+            label="Descrição"
+            value={description}
+            onChange={(e) => { setDescription(e.target.value) }}
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend>Sobre</legend>
           <Select
-            name="sex"
-            label="Gênero"
-            value={sex}
-            onChange={(e) => { setSex(e.target.value) }}
+            required
+            name="Blood-code"
+            label="Tipo sanguíneo"
+            value={blood_code}
+            onChange={(e) => { setBlood_code(e.target.value) }}
             options={[
-            {value: "Masculino", label: "Masculino" },
-            {value: "Feminino",  label: "Feminino" },]}  
+          { value: "1", label: "A+" },
+          { value: "2", label: "A-" },
+          { value: "3", label: "B+" },
+          { value: "4", label: "B-" },
+          { value: "5", label: "AB+" },
+          { value: "6", label: "AB-" },
+
+            ]}
           />
+        </fieldset>
 
-        <div id="map-container">
-          <label>Localização</label> 
+        <footer>
+          <p>
+            <img src={warningIcon} alt="Aviso Importante" />
+            Importante <br />
+            Preencha todos os dados
+          </p>
+          <button type="submit" >Salvar cadastro</button>
+        </footer>
 
-          <MapContainer
-              center={[-2.6350548,-44.2668795]}
-              style={{ width: '100%', height: 280 }}
-              zoom={9.5}
-              id="map-container"   
-            >
-            <TileLayer
-              url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
-            />   
-
-            { 
-            
-            longitude !== 0? (
-
-              <Marker 
-
-              interactive={false} 
-              icon={mapMarkerIcon}
-              position={[
-                latitude, longitude
-              ]} />
-
-            ) : null
-
-            }
-
-
-          </MapContainer>
-          <button type="button" onClick={geolocation} >  
-            <span><SiGooglemaps/></span>   
-            <strong>Usar localização atual</strong>
-          </button>
-        </div>
-
-        <Input 
-          name="phone_number"  
-          label="Whatsapp" 
-          value={phone_number}
-          onChange={(e) => { setPhone_number(e.target.value) }}
-        />
-
-        <Textarea 
-          name="description"
-          label="Descrição"
-          value={description}
-          onChange={(e) => { setDescription(e.target.value) }}
-        />
-      </fieldset>
-
-      <fieldset>
-        <legend>Sobre</legend>
-        <Select
-          name="Blood-code"
-          label="Tipo sanguíneo"
-          value={blood_code}
-          onChange={(e) => { setBlood_code(e.target.value) }}
-          options={[
-        { value: "1", label: "A+" },
-        { value: "2", label: "A-" },
-        { value: "3", label: "B+" },
-        { value: "4", label: "B-" },
-        { value: "5", label: "AB+" },
-        { value: "6", label: "AB-" },
-
-          ]}
-        />
-      </fieldset>
-
-      <footer>
-        <p>
-          <img src={warningIcon} alt="Aviso Importante" />
-          Importante <br />
-          Preencha todos os dados
-        </p>
-        <button type="submit" >Salvar cadastro</button>
-      </footer>
-
-   </form>
- </main>
+    </form>
+  </main>
+  </div>
 </div>
-  );
+);
 }
 export default DonatorForm;

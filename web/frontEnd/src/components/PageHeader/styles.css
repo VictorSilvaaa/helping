@@ -5,6 +5,7 @@
 }
 .page-header .top-bar-container {
   width: 90%;
+  height: 150px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -13,6 +14,8 @@
   padding: 1.6rem 0;
 }
 .page-header .top-bar-container a {
+  display: flex;
+  align-items: center;
   height: 3.2rem;
   transition: opacity 0.2s;
 }
@@ -22,10 +25,9 @@
 .page-header .top-bar-container > img {
   height: 4.5rem;
 }
+
 img{ 
   height: 3.5rem;
-  
- 
 }
 .page-header .header-content {
   width: 90%;

@@ -1,10 +1,7 @@
-body {
-  background: var(--color-line-in-white) no-repeat;
-}
-
 #page-form {
   width: 100vw;
   height: 100vh;
+  background: var(--color-line-in-white) no-repeat;
 }
 
 #page-form .content .page-header .header-content {

@@ -1,6 +1,5 @@
 #page-form {
   width: 100vw;
-  height: 100vh;
   background: var(--color-line-in-white) no-repeat;
 }
 
@@ -121,7 +120,7 @@
   background: var(--color-secundary-dark);
 }
 
-@media (min-width: 700px) {
+@media (min-width: 800px) {
 
   #page-form .content {
     max-width: 100%;
@@ -132,7 +131,7 @@
   }
 
   #page-form .content main {
-    max-width: 1000px;
+    max-width: 850px;
     margin: -40px auto;
     border-radius: 8px;
   }

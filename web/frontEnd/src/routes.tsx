@@ -12,7 +12,7 @@ function Routes(){
         <BrowserRouter>
            <Switch>
            <Route path="/" exact component={ Landing } />  
-           <Route path="/createDonator"  component={ DonatorForm } />  
+           <Route path="/doar"  component={ DonatorForm } />  
            </Switch>          
         </BrowserRouter>
     );

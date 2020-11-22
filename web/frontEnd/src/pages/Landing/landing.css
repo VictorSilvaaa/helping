@@ -71,11 +71,23 @@
 
   
 }
-#buttonDonator{
+
+.button {
+  transition: background 0.4s;
+}
+
+#btn-donators {
   background: var(--button-red);
 }
-#buttonDonators{
+#btn-create-donator {
   background: var(--button-green);
+}
+
+#btn-donators:hover{
+  background: var(--button-red-hover);
+}
+#btn-create-donator:hover{
+  background: var(--button-green-hover);
 }
 
 #page-home .content main a span {
@@ -88,12 +100,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s;
 }
 
 #page-home .content main a span svg {
   color: var(--color-link);
 }
+
 #blood{
   width: 100%;
   height: 43%;
@@ -116,14 +128,8 @@
   justify-content: space-between;
   font-size: 1.5rem;
 
-  
 }
-#buttonDonator:hover{
-  background: var(--button-red-hover);
-}
-#buttonDonators:hover{
-  background: var(--button-green-hover);
-}
+
 
 @media (max-width: 500px){
   #page-home .content main a span{

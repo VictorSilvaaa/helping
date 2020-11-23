@@ -1,4 +1,4 @@
-.success-screen {
+.random-screen {
   width: 100vw;
   height: 100vh;
 
@@ -17,7 +17,7 @@
   z-index: 1000;
 }
 
-.success-screen p {
+.random-screen p {
   font-size: 1.6rem;
   color: var(--color-title-in-primary);
   margin-top: 10px;

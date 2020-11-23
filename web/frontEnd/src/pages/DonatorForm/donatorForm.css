@@ -4,7 +4,7 @@
 }
 
 #page-form .content .page-header .header-content {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 #page-form .content main {
@@ -120,6 +120,7 @@
   background: var(--color-secundary-dark);
 }
 
+
 @media (min-width: 800px) {
 
   #page-form .content {
@@ -127,7 +128,7 @@
   }
   
   #page-form .content .page-header .header-content {
-    margin-bottom: 60px;
+    margin-bottom: 45px;
   }
 
   #page-form .content main {

@@ -9,14 +9,15 @@ import Input from "../../components/Input";
 import Textarea from "../../components/Textarea";
 import Select from "../../components/Select";
 import mapMarkerIcon from "../../utils/mapIcon";
+import RandomScreen from "../../components/randomScreen/";
 
 //style geral
 import 'leaflet/dist/leaflet.css';
 import "./donatorForm.css";
 import "../../assets/styles/global.css";
 import warningIcon from "../../assets/images/icons/warning.svg";
-import {SiGooglemaps} from 'react-icons/si';
-
+import successIcon from '../../assets/images/icons/success-check-icon-2.svg';
+import failedIcon from '../../assets/images/icons/failedIcon.svg';
 
 
 function DonatorForm(): ReactElement {
@@ -29,6 +30,7 @@ function DonatorForm(): ReactElement {
   const [blood_code, setBlood_code] = useState('');
   const [latitude, setLatitude] = useState(1);
   const [longitude, setLongitude] = useState(1);
+  const [randomScreen, setRandomScreen] = useState('');
  
   
   //geolocalização
@@ -54,13 +56,18 @@ function DonatorForm(): ReactElement {
     latitude,
     longitude  
   }).then(() => {
-    alert('Cadastro realizado com sucesso!');
+    setRandomScreen('success');
+    setTimeout(()=>{
+      history.push('/')
+    }, 4500);
 
-    history.push('/');
   }).catch(() => {
-    alert('Erro no cadastro.');
+    setRandomScreen('failed');
+    setTimeout(()=>{
+      history.push('/doar')
+    }, 4500);
   });
-    }
+  }
 
 return (
   
@@ -170,7 +177,17 @@ return (
     </form>
   </main>
   </div>
+  
+  { randomScreen === 'success' && (
+    <RandomScreen img={successIcon} text="Cadastro realizado com sucesso"/>
+  )}
+
+  {randomScreen === 'failed' && (
+    ( <RandomScreen img={failedIcon} text="Houve um erro com o cadastro, tente novamente"/> )
+  )}
+
 </div>
 );
 }
+
 export default DonatorForm;

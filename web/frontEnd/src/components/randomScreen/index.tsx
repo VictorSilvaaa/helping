@@ -10,7 +10,7 @@ interface randomScreenProps {
 const RandomScreen: React.FC<randomScreenProps> = (props) => {
   return (
     <div className="success-screen">
-      <img src={props.img} alt="Cadastro realizado com sucesso"></img>
+      <img src={props.img} alt={props.text}></img>
       <p>{props.text}</p>
     </div>
   )

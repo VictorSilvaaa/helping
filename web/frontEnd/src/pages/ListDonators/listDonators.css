@@ -9,31 +9,23 @@
     
 }
 
+
 #listDonators .cards{
     display: grid;
     grid-template-columns: auto;
-    grid-auto-rows: 400px;
+    grid-auto-rows: 420px;
     grid-gap: 20px 0;
     padding: 10px;
-
+    
+    
     width:87%;
+   
     
 
 
 }
 #listDonators .cards .card{
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    border-radius: 8px;
-    font-size: 30px;
-    text-align: center;
-    
-    
-    
-    display: flex;
-    flex-direction: column;
-    
-    align-items: center;
+    margin-bottom: 40px;
 }
 
 
@@ -51,7 +43,14 @@
     padding: 10px;
     
 }
-@media (min-width:700px){
+
+/* @media (max-width: 699px){
+    #listDonators .cards{
+        justify-content:center;
+    }
+
+} */
+@media (min-width:700px) , (max-width:1099){
     #listDonators .cards{
         grid-template-columns:auto auto;
         grid-gap: 20px 10px;
@@ -60,6 +59,93 @@
 @media (min-width:1100px){
     #listDonators .cards{
         grid-template-columns:auto auto auto;
-        grid-gap: 20px 10px;
+        grid-gap: 45px 10px;
     }
 }
+
+
+/* CARDS */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+.card-container {
+	background-color: #231E39;
+    border-radius: 8px;
+    border: 1px solid red;
+	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+    
+    color: #B3B8CD;
+    text-align: center;
+	padding-top: 30px;
+   
+    position: relative;
+    max-width: 365px;
+    max-height: 420px;
+    
+   
+}
+
+.card-container .blood {
+	color: white;
+	background: var(--background-primary);
+	border-radius: 3px;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 3px 7px;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+
+.card-container .round {
+    border: 1px solid red;
+	border-radius: 50%;
+    padding: 7px;
+    height: 20%;
+}
+
+
+.card-container h3 {
+    margin: 8% 0;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+
+.card-container p {
+    margin-bottom: 5%;
+	font-size: 1.3rem;
+	line-height: 21px;
+}
+
+
+button.primary {
+	background: var(--button-red);
+	border: 1px solid red;
+	border-radius: 3px;
+	color:white;
+	padding: 10px 25px;
+}
+
+.skills {
+	background-color: #1F1A36;
+	text-align: left;
+	padding: 15px;
+	margin-top: 30px;
+}
+
+.skills ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.skills ul li {
+	border: 1px solid #2D2747;
+	border-radius: 2px;
+	display: inline-block;
+	font-size: 12px;
+	margin: 0 7px 7px 0;
+	padding: 7px;
+}
+

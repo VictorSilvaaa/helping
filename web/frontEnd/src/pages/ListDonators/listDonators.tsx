@@ -51,7 +51,7 @@ function ListDonators() {
              return(
               <div className="card-container">
                 <span className="blood">{donator.blood}</span>
-                <img className="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
+               <FaUserAlt className="round"></FaUserAlt>
               
                 <h3>{donator.name}</h3>
                 <p>{donator.description}</p>

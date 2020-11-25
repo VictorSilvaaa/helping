@@ -41,40 +41,41 @@ function ListDonators() {
     <div >
         <PageHeader 
         title="Aqui  estão alguns doadores disponíveis"
-        description="Entre em contato com algum doador e conversem"
-        >
-
+        description="Entre em contato com algum doador e conversem">
         </PageHeader>
-      
+    
       <main>
-            <div id="listDonators">
-              <div className="cards">
-              {Donators.map((donator:Donator) => {
-                  return(
-                    <div className="card">
-                        <header>
-                            <FaUserAlt></FaUserAlt>
-                        </header>
-                        <section>
-                          <p>{donator.name}</p>
-                          <p>{donator.blood}</p>
-                          <p>{donator.description}</p>
-                          <button>
-                            <strong>Conhecer doador</strong>
-                          </button>
-                        </section>
-                       
+        <div id="listDonators">
+         <div className="cards">
+           {Donators.map((donator:Donator) => {
+             return(
+              <div className="card-container">
+                <span className="blood">{donator.blood}</span>
+               <FaUserAlt className="round"></FaUserAlt>
+              
+                <h3>{donator.name}</h3>
+                <p>{donator.description}</p>
 
-                        
-                        
-         
-                    </div>
+                <div className="buttons">
+                  <button className="primary">
+                    mensagem
+                  </button>
+                </div>
+
+                <div className="skills">
+                  <h6>saiba mais</h6>
+                  <ul>
+                    <li>Localização</li>
+                    <li>contato</li>
+                  </ul>
+              </div>
+        </div>     
+                       
                   );
               })}
             
-              </div>
-            </div>
-          
+          </div>
+        </div>
       </main>
     </div>
 

@@ -1,6 +1,7 @@
 /* import Donator from '../models/Donator';  */
 
 interface Donator {
+  id: number,
   name: string,
   sex: string,
   phone_number: string,
@@ -17,6 +18,7 @@ interface Donator {
 export default {
   render(donator: Donator){
     return {
+        id: donator.id,
         name: donator.name,
         sex: donator.sex,
         phone_number: donator.phone_number,

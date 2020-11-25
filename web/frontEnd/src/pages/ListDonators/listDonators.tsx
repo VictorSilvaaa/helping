@@ -3,10 +3,12 @@ import api from '../../services/api';
 import './listDonators.css'
 import '../../assets/styles/global.css';
 import {FaUserAlt} from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 import PageHeader from "../../components/PageHeader";
 
 interface Donator{
+  id: number;
   name: string;
   sex: string;
   phone_number: string;
@@ -35,11 +37,13 @@ function ListDonators() {
     console.log(error);
   }
 }
- 
+
+
   return (
     
     <div >
-        <PageHeader 
+        <PageHeader
+        src="/" 
         title="Aqui  estão alguns doadores disponíveis"
         description="Entre em contato com algum doador e conversem">
         </PageHeader>
@@ -52,14 +56,16 @@ function ListDonators() {
               <div className="card-container">
                 <span className="blood">{donator.blood}</span>
                <FaUserAlt className="round"></FaUserAlt>
-              
+               
                 <h3>{donator.name}</h3>
                 <p>{donator.description}</p>
 
                 <div className="buttons">
-                  <button className="primary">
-                    mensagem
-                  </button>
+
+                <Link to='/contato/'className="primary">
+                   mensagem
+                </Link>
+                  
                 </div>
 
                 <div className="skills">

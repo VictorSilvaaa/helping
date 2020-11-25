@@ -9,13 +9,14 @@ import "./styles.css";
 interface PageHeaderProps {
   title: string;
   description?: string;
+  src: string;
 }
 
 const PageHeader: React.FC<PageHeaderProps> = (props) => {
   return (
     <header className="page-header">
       <div className="top-bar-container">
-        <Link to="/">
+        <Link to={props.src}>
           <img src={backIcon} alt="Voltar" />
         </Link>
         <img src={logoImage} alt="Helping" />

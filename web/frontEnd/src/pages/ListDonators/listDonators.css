@@ -123,12 +123,13 @@
 }
 
 
-button.primary {
+a.primary {
 	background: var(--button-red);
 	border: 1px solid red;
 	border-radius: 4px;
 	color:white;
-	padding: 10px 25px;
+    padding: 10px 25px;
+    text-decoration: none;
 }
 
 .skills {

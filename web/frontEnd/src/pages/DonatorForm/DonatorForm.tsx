@@ -74,6 +74,7 @@ return (
 <div id="page-form">
   <div className="content">
     <PageHeader
+    src="/"
     title="Que incrível que você quer ajudar"
     description="O primeiro passo é preencher esse formulario de inscrição."
     />

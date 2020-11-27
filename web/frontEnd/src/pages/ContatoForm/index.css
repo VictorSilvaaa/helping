@@ -1,45 +1,41 @@
 #page{
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    
 
 }
 
 #page .container{
+
     width: 100%;
     height: 100%;
     
+    
     background: var(--color-line-in-white);
     display: flex;
-    align-items: center;
+    
     justify-content: center;
 }
 
 #page .container main{
-    width: 87%;
-    max-width: 800px;
+    width: 70%;
+    max-width: 1080px;
+    max-height: 800px;
+    
     padding: 10px 25px;
     background: var(--color-box-base);
+
+    border-radius: 8px;
 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
-}
-hr{
-    background: var(--color-line-in-white);
-
-    margin-bottom: 10px;
-
-    height: 2px;
-    width: 100%;
-
-    border: none;
 }
 
 #page .container main section{
     margin:25px 0;
-    background: var(--color-line-in-white);
+    background: #e6e6f08e;
     padding:10px;
     border-radius: 5px;
 
@@ -79,6 +75,13 @@ hr{
 
     font-size: 1.3rem;
     width: 33.3%;
+}
+hr{
+    background: var(--color-line-in-white);
+    margin-bottom: 10px;
+    height: 2px;
+    width: 100%;
+    border: none;
 }
 
 #page .container main .input-block {

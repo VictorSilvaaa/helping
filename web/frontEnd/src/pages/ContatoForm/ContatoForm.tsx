@@ -59,48 +59,48 @@ function Contact(e: FormEvent){
     console.log(User);
   }
     return (
-        <div id="page">
-          <PageHeader 
+      <div id="page">
+        <PageHeader 
               src="/doadores"
               title="Quase lá"
               description="Entre em contanto com o doador 
               escolhido atráves do seu whatsapp"  >
-          </PageHeader>
+        </PageHeader>
 
         <div className="container">
-        <main>
-          <section id="perfilDoador">
-            <h4>Sobre o doador</h4>
-            <ul>
-              <li>Nome: {User.name}</li>
-              <li>Bairro: Maiobinha</li>
-              <li>Tipo Sanguíneo: {User.blood}</li>
-            </ul>
-          </section>
-            <Input 
-              name="name" 
-              label="Nome Completo" 
-              placeholder="Digite aqui..."
-              value={Name}
-              onChange={(e) => { setName(e.target.value) }}
-            ></Input>
+          <main>
+            <section id="perfilDoador">
+              <h4>Sobre o doador</h4>
+              <ul>
+                <li>Nome: {User.name}</li>
+                <li>Bairro: Maiobinha</li>
+                <li>Tipo Sanguíneo: {User.blood}</li>
+              </ul>
+            </section>
+
+            <hr/>
             
-              <Textarea
-              required
-              name="description"
-              label="Mensagem"
-              placeholder="Digite sua mensagem aqui..."
-              value={Message}
-              onChange={(e) => { setMessage(e.target.value) }}
-              >
+            <Input 
+                name="name" 
+                label="Nome Completo" 
+                placeholder="Digite aqui..."
+                value={Name}
+                onChange={(e) => { setName(e.target.value) }}>
+            </Input>
+              
+            <Textarea
+                required
+                name="description"
+                label="Mensagem"
+                placeholder="Digite sua mensagem aqui..."
+                value={Message}
+                onChange={(e) => { setMessage(e.target.value) }} >
             </Textarea>
 
             <div className="buttons">
-            <a href={`https://api.whatsapp.com/send?phone=55${User.phone_number}&text=${`Olá meu nome é ${Name}, e vim pelo Helping. ${Message} `}`} target="_blank">Enviar</a>
+              <a href={`https://api.whatsapp.com/send?phone=55${User.phone_number}&text=${`Olá meu nome é ${Name}, e vim pelo Helping. ${Message} `}`} target="_blank">Enviar</a>
             </div>
-            
-           
-            
+
           </main>
             
         </div>

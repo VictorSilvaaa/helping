@@ -37,7 +37,7 @@
     margin:25px 0;
     background: #e6e6f08e;
     padding:10px;
-    border-radius: 5px;
+    border-radius: 8px;
 
     display: flex;
     flex-direction: column;
@@ -123,5 +123,14 @@ hr{
   
     
 }
-
+#page .container main .buttons a #icon_whats{
+    float: left;
+    margin:10px;
+}
+@media (max-width:720px){
+    #page .container main{
+        width: 95%;
+    }
+    
+}
 

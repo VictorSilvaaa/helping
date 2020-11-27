@@ -3,11 +3,12 @@ import React,{FormEvent,useState,useEffect} from  'react';
 import { Link,Redirect, useParams} from 'react-router-dom';
 import api from '../../services/api';
 import "./index.css";
+import axios from 'axios';
+import {ImWhatsapp} from 'react-icons/im';
 //components
 import PageHeader from "../../components/PageHeader";
 import Input from "../../components/Input";
 import Textarea from "../../components/Textarea";
-
 
 interface DonatorParms{ 
     id:string;
@@ -40,9 +41,11 @@ function Contact(e: FormEvent){
     const Params = useParams<DonatorParms>();
     const [Name, setName] = useState('');
     const [Message, setMessage] = useState('');
+    const [Bairro, setBairro] = useState([]);
 
     useEffect(() => {
       searchDonators()
+      SearchNeighborhood()
     },[Params.id])
   
     async function searchDonators() { 
@@ -55,15 +58,23 @@ function Contact(e: FormEvent){
     }
   }
 
-  function a(){
-    console.log(User);
+  async function SearchNeighborhood(){
+    try{  
+      const response = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=-2.5711586,-44.2652319&key=AIzaSyCyS0S7lgudJ_tNJi2FI7C9J51Alf-2FEQ`);
+      setBairro(response.data);
+      console.log(response.data);
+    }
+    catch (error){
+      console.log(error);
+    } 
+
   }
     return (
       <div id="page">
         <PageHeader 
               src="/doadores"
               title="Quase lá"
-              description="Entre em contanto com o doador 
+              description="Entre em contato com o doador 
               escolhido atráves do seu whatsapp"  >
         </PageHeader>
 
@@ -82,7 +93,7 @@ function Contact(e: FormEvent){
             
             <Input 
                 name="name" 
-                label="Nome Completo" 
+                label="Nome" 
                 placeholder="Digite aqui..."
                 value={Name}
                 onChange={(e) => { setName(e.target.value) }}>
@@ -98,9 +109,12 @@ function Contact(e: FormEvent){
             </Textarea>
 
             <div className="buttons">
-              <a href={`https://api.whatsapp.com/send?phone=55${User.phone_number}&text=${`Olá meu nome é ${Name}, e vim pelo Helping. ${Message} `}`} target="_blank">Enviar</a>
+              <a href={`https://api.whatsapp.com/send?phone=55${User.phone_number}&text=${`Olá meu nome é ${Name}, e vim pelo Helping. ${Message} `}`} target="_blank"> 
+               <ImWhatsapp id="icon_whats"/>
+               Enviar
+              </a>
             </div>
-
+        
           </main>
             
         </div>

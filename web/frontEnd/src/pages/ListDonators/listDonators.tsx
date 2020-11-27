@@ -46,7 +46,7 @@ function ListDonators() {
         <PageHeader
         src="/" 
         title="Aqui  estão alguns doadores disponíveis"
-        description="Entre em contato com algum doador e conversem">
+        description="Entre em contato com algum doador e conversem" >
         </PageHeader>
     
       <main>

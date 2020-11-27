@@ -19,7 +19,7 @@
     
     
     width:87%;
-   
+   max-width: 1100px;
     
 
 
@@ -44,30 +44,9 @@
     
 }
 
-/* @media (max-width: 699px){
-    #listDonators .cards{
-        justify-content:center;
-    }
-
-} */
-@media (min-width:700px) , (max-width:1099){
-    #listDonators .cards{
-        grid-template-columns:auto auto;
-        grid-gap: 20px 10px;
-    }
-}
-@media (min-width:1100px){
-    #listDonators .cards{
-        grid-template-columns:auto auto auto;
-        grid-gap: 45px 10px;
-    }
-}
 
 
 /* CARDS */
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-
 
 .card-container {
 	background-color: #231E39;
@@ -123,6 +102,12 @@
 }
 
 
+.card-container .buttons{
+    margin-top: 25px;
+    
+}
+
+
 a.primary {
 	background: var(--button-red);
 	border: 1px solid red;
@@ -130,13 +115,19 @@ a.primary {
 	color:white;
     padding: 10px 25px;
     text-decoration: none;
+
+
 }
 
 .skills {
 	background-color: #1F1A36;
 	text-align: left;
-	padding: 15px;
-	margin-top: 30px;
+    padding: 15px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+
+    border-radius: 0 0 9px 9px;
 }
 
 .skills ul {
@@ -154,3 +145,23 @@ a.primary {
 	padding: 7px;
 }
 
+
+
+@media (max-width: 699px){
+    #listDonators .cards{
+        justify-content:center;
+    }
+
+} 
+@media (min-width:700px) , (max-width:1099){
+    #listDonators .cards{
+        grid-template-columns:auto auto;
+        grid-gap: 20px 10px;
+    }
+}
+@media (min-width:1100px){
+    #listDonators .cards{
+        grid-template-columns:auto auto auto;
+        grid-gap: 45px 10px;
+    }
+}

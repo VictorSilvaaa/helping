@@ -41,35 +41,36 @@ function Contact(e: FormEvent){
     const Params = useParams<DonatorParms>();
     const [Name, setName] = useState('');
     const [Message, setMessage] = useState('');
-    const [Bairro, setBairro] = useState([]);
+    const [Bairro, setBairro] = useState('');
 
     useEffect(() => {
-      searchDonators()
-      SearchNeighborhood()
     },[Params.id])
   
     async function searchDonators() { 
     try{  
       const response = await api.get(`/donator/${Params.id}`);
       setUser(response.data);
+     
     }
     catch (error){
       console.log(error);
     }
   }
 
-  async function SearchNeighborhood(){
-    try{  
-      const response = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=-2.5711586,-44.2652319&key=AIzaSyCyS0S7lgudJ_tNJi2FI7C9J51Alf-2FEQ`);
-      setBairro(response.data);
-      console.log(response.data);
-    }
-    catch (error){
-      console.log(error);
-    } 
+  // async function SearchNeighborhood(){
+  //   try{  
+  //     const response = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${User.latitude},${User.longitude}&key=${process.env.REACT_APP_MAPS_GOOGLE}`);
+  //     setBairro(response.data.results[0].address_components[2].long_name);
+  //   }
+  //   catch (error){
+  //     console.log(error);
+  //   } 
 
-  }
+  // }
+
+
     return (
+      
       <div id="page">
         <PageHeader 
               src="/doadores"
@@ -114,7 +115,6 @@ function Contact(e: FormEvent){
                Enviar
               </a>
             </div>
-        
           </main>
             
         </div>

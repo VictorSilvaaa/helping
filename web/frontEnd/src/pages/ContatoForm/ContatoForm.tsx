@@ -41,7 +41,7 @@ function Contact(e: FormEvent){
     const Params = useParams<DonatorParms>();
     const [Name, setName] = useState('');
     const [Message, setMessage] = useState('');
-    const [Bairro, setBairro] = useState('');
+    const [Bairro, setBairro] = useState('Desconhecido');
 
     useEffect(() => {
       searchDonators();

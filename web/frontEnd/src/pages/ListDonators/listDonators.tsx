@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 import PageHeader from "../../components/PageHeader";
 
+
 interface Donator{
   id: number;
   name: string;
@@ -45,7 +46,7 @@ function ListDonators() {
         <PageHeader
         src="/" 
         title="Aqui  estão alguns doadores disponíveis"
-        description="Entre em contato com algum doador e conversem">
+        description="Entre em contato com algum doador e conversem" >
         </PageHeader>
     
       <main>
@@ -62,7 +63,7 @@ function ListDonators() {
 
                 <div className="buttons">
 
-                <Link to='/contato/'className="primary">
+                <Link to={`/contato/${donator.id}`}className="primary">
                    mensagem
                 </Link>
                   

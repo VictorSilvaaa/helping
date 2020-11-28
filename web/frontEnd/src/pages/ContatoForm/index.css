@@ -1,0 +1,136 @@
+#page{
+    width: 100%;
+    height: 100vh;
+    
+
+}
+
+#page .container{
+
+    width: 100%;
+    height: 100%;
+    
+    
+    background: var(--color-line-in-white);
+    display: flex;
+    
+    justify-content: center;
+}
+
+#page .container main{
+    width: 70%;
+    max-width: 1080px;
+    max-height: 800px;
+    
+    padding: 10px 25px;
+    background: var(--color-box-base);
+
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#page .container main section{
+    margin:25px 0;
+    background: #e6e6f08e;
+    padding:10px;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items:center;
+
+    
+}
+#page .container main section h4{
+    margin-bottom: 10px;
+    text-decoration: underline;
+
+}
+#page .container main section ul{
+    list-style-type: none;
+	margin: 0;
+    padding: 0;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    
+
+}
+#page .container main section ul li{
+
+    
+    border: 1px solid #2D2747;
+	border-radius: 2px;
+	display: inline-block;
+	font-size: 12px;
+	margin: 0 7px 7px 0;
+    padding: 10px;
+
+    font-size: 1.3rem;
+    width: 33.3%;
+}
+hr{
+    background: var(--color-line-in-white);
+    margin-bottom: 10px;
+    height: 2px;
+    width: 100%;
+    border: none;
+}
+
+#page .container main .input-block {
+    width: 100%;
+    margin:10px 0;
+
+}
+#page .container main .textarea-block {
+    width: 100%;
+}
+#page .container main .buttons {
+
+    width: 100%;
+
+    padding-bottom: 25px;
+
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    
+}
+#page .container main .buttons a{
+    background: var(--button-green);
+
+   
+    color: #fff;
+    width: 40%;
+    max-width: 360px;
+    height: 72px;
+    border-radius: 8px;
+    text-decoration: none;
+  
+    
+  
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    overflow: hidden;
+  
+    
+}
+#page .container main .buttons a #icon_whats{
+    float: left;
+    margin:10px;
+}
+@media (max-width:720px){
+    #page .container main{
+        width: 95%;
+    }
+    
+}
+

@@ -44,7 +44,13 @@ function Contact(e: FormEvent){
     const [Bairro, setBairro] = useState('');
 
     useEffect(() => {
+      searchDonators();
     },[Params.id])
+
+    useEffect(() => {
+      SearchNeighborhood();
+    },[User.latitude,User.longitude])
+  
   
     async function searchDonators() { 
     try{  
@@ -57,18 +63,16 @@ function Contact(e: FormEvent){
     }
   }
 
-  // async function SearchNeighborhood(){
-  //   try{  
-  //     const response = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${User.latitude},${User.longitude}&key=${process.env.REACT_APP_MAPS_GOOGLE}`);
-  //     setBairro(response.data.results[0].address_components[2].long_name);
-  //   }
-  //   catch (error){
-  //     console.log(error);
-  //   } 
+  async function SearchNeighborhood(){
+    try{  
+      const response = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${User.latitude},${User.longitude}&key=${process.env.REACT_APP_MAPS_GOOGLE}`);
+      setBairro(response.data.results[0].address_components[2].long_name);
+    }
+    catch (error){
+      console.log(error);
+    } 
 
-  // }
-
-
+  }
     return (
       
       <div id="page">
@@ -85,7 +89,7 @@ function Contact(e: FormEvent){
               <h4>Sobre o doador</h4>
               <ul>
                 <li>Nome: {User.name}</li>
-                <li>Bairro: Maiobinha</li>
+                <li>Bairro: {Bairro}</li>
                 <li>Tipo Sanguíneo: {User.blood}</li>
               </ul>
             </section>

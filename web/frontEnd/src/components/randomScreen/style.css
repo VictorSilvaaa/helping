@@ -7,7 +7,6 @@
   left: 0px;
 
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -17,8 +16,19 @@
   z-index: 1000;
 }
 
-.random-screen p {
-  font-size: 1.6rem;
+.random-screen .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  
+  padding: 0px 25px;
+
+}
+
+.random-screen .container p {
+  font-size: 1.4rem;
+  font-weight: 700;
   color: var(--color-title-in-primary);
   margin-top: 10px;
 }

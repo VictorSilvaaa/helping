@@ -161,7 +161,7 @@ a.primary {
 }
 @media (min-width:1100px){
     #listDonators .cards{
-        grid-template-columns:auto auto auto;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 45px 10px;
     }
 }

@@ -145,14 +145,7 @@ a.primary {
 	padding: 7px;
 }
 
-
-
-@media (max-width: 699px){
-    #listDonators .cards{
-        justify-content:center;
-    }
-
-} 
+ 
 @media (min-width:700px) , (max-width:1099){
     #listDonators .cards{
         grid-template-columns:auto auto;

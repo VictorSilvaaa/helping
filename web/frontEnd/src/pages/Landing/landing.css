@@ -206,8 +206,10 @@
 
 @media (max-width: 800px){
   #page-home .Cards{
-    grid-template-columns: auto;
+    padding: 2% 0;
+    grid-template-columns: 95%;
     grid-gap: 60px;
+    justify-content: center;
   }
   
 } 

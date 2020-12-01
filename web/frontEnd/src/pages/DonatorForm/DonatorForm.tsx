@@ -161,6 +161,8 @@ return (
           { value: "4", label: "B-" },
           { value: "5", label: "AB+" },
           { value: "6", label: "AB-" },
+          { value: "7", label: "O+" },
+          { value: "8", label: "O-" },
 
             ]}
           />
